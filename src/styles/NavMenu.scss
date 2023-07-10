@@ -1,0 +1,24 @@
+#HeaderLandingPageNavMenu{
+    height: 30px;
+    width: 123px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 162px;
+    margin-top: 32px;
+}
+a{
+    color: white;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+#Home {
+    text-decoration: underline solid #E95E30 2px;
+    text-underline-offset: 12px; /* Change this value as needed */
+}
+
+#Blog{
+    text-decoration: none;
+}
