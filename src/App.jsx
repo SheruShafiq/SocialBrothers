@@ -1,16 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
-
+import "./App.scss";
+import React from "react";
+import Logo from "./assets/logo.svg";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-
-    </>
-  )
+    <div id="Parent">
+      <div className="Header" id="headerLandingPage">
+        <img
+          src={Logo}
+          alt="Logo"
+          className="headerLandingPageLogo"
+          id="logoHeaderLandingPage"
+        />
+        <div id="HeaderLandingPageNavMenu">
+          <a href="http://" className="headerLandingPageChildren" id="Home">
+            Home
+          </a>
+          <a href="http://" className="headerLandingPageChildren" id="Blog">
+            Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

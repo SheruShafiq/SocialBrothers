@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+#Parent {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+   margin-top: -8px;
+}
+#headerLandingPage {
+    background-image: url("./assets/Mask.png");
+    display: flex;
+    flex-direction: row;
+    height: 208px;
+    width: 1440px;
+justify-content: space-between;
+}
+#logoHeaderLandingPage {
+    height: 57px;
+    width: 240px;
+    margin-left: 162px;
+    margin-top: 32px;
+}
+#HeaderLandingPageNavMenu{
+    height: 30px;
+    width: 123px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 162px;
+    margin-top: 32px;
+}
+a{
+    color: white;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+#Home {
+    text-decoration: underline solid #E95E30 2px;
+    text-underline-offset: 12px; /* Change this value as needed */
+}
+
+#Blog{
+    text-decoration: none;
+}
