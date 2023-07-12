@@ -4,6 +4,7 @@ import "../styles/Home.scss";
 import Logo from "../assets/logo.svg";
 import Form from "../components/Form";
 import Posts from "../components/Posts";
+import Footer from "../components/Footer";
 
 export type NavMenuItems = {
   heading: string;
@@ -66,6 +67,7 @@ export default function Home() {
         <Form {...formData} />
         <Posts />
       </div>
+      <Footer />
     </div>
   );
 }
