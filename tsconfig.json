@@ -17,5 +17,5 @@
     "jsx": "react-jsx",
     
   },
-  "include": ["src/components", "./globals.d.ts", "src",  "src/**/*.ts",  "globals.d.ts", "global.d.tsx", "src/**/*.tsx", "src/**/*.ts", "src/**/*.js", "src/**/*.jsx", "src/**/*.json", "src/**/*.d.ts", "src/**/*.d.tsx"],
+  "include": ["src/components", "./globals.d.ts", "src",  "src/**/*.ts", ".png", "globals.d.ts", "global.d.tsx", "src/**/*.tsx", "src/**/*.ts", "src/**/*.js", "src/**/*.jsx", "src/**/*.json", "src/**/*.d.ts", "src/**/*.d.tsx", "src/**/*.d.png",],
 }

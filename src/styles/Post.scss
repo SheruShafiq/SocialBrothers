@@ -1,0 +1,43 @@
+#bannerImg{
+    height: 72px;
+  width: 285px;
+  background-image: url('../assets/postbanner.png');
+}
+#bannerText{
+    height: 10px;
+  width: 43px;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: italic;
+  letter-spacing: 0;
+  line-height: 10px;
+}
+#postParent{
+    height: 217px;
+    width: 285px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+#postTitle{
+    height: 29px;
+  width: 253px;
+  color: #262626;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+#postContent{
+    height: 76px;
+    width: 253px;
+    color: #868686;
+    font-family: Inter;
+    font-size: 12px;
+    letter-spacing: 0;
+   
+    font-weight: 100;
+}
+#postInfo{
+    margin: 16px;
+}
