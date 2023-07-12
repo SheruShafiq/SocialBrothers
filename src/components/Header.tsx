@@ -1,12 +1,19 @@
-import React from "react";
+import React, { FunctionComponent, SVGAttributes } from "react";
 import "../styles/Header.scss";
 import NavMenu from "./NavMenu";
+import { NavMenuItems } from "../pages/Home";
 
-function Header({ logo, navMenuItems }) {
+interface HeaderProps {
+  logo: FunctionComponent<SVGAttributes<SVGElement>>;
+  navMenuItems: NavMenuItems[];
+}
+
+function Header({ logo, navMenuItems }: HeaderProps) {
+  const logoPath = logo.toString(); // Convert logo to string
   return (
     <div className="Header" id="headerLandingPage">
       <img
-        src={logo} // Access logo directly
+        src={logoPath} // Access logo directly
         alt="Logo"
         className="headerLandingPageLogo"
         id="logoHeaderLandingPage"
