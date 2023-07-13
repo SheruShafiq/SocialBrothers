@@ -1,21 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Posts.scss";
 import Post from "./Post";
+import Button from "./Button";
 
 function Posts() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const url =
+      "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=4&sortBy=title&sortDirection=asc&searchPhrase=test%20ber&categoryId=2";
+
+    const headers = {
+      token: "pj11daaQRz7zUIH56B9Z",
+    };
+
+    fetch(url, {
+      headers: headers,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data.data); // Store the fetched posts in state
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []); // Run the effect only once, on component mount
+
   return (
     <div id="PostsParent">
-      <Post
-        date="12-16-2019"
-        category="Tech"
-        title="Heading"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget metus blandit, pharetra nisi eu, aliquet leo. risus, id lobortis massa ultrices nec."
-      />
-      <Post
-        date="12-16-2019"
-        category="Tech"
-        title="Heading"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget metus blandit, pharetra nisi eu, aliquet leo. risus, id lobortis massa ultrices nec."
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          date={post.created_at}
+          category={post.category.name}
+          title={post.title}
+          content={post.content}
+        />
+      ))}
+
+      <Button
+        submitButtonText="Laad meer"
+        handleSubmit={() => console.log("hi")}
       />
     </div>
   );

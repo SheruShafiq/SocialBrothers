@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
+import Button from "./Button";
 
 function Form(props: FormProps) {
   const {
@@ -102,9 +103,7 @@ function Form(props: FormProps) {
           onChange={handleContentChange}
         ></textarea>
 
-        <button type="submit" id="submitButton" onClick={handleSubmit}>
-          {submitButtonText}
-        </button>
+        <Button submitButtonText="Submit" handleSubmit={handleSubmit} />
       </form>
     </div>
   );
