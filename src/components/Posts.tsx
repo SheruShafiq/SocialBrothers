@@ -4,11 +4,11 @@ import Post from "./Post";
 import Button from "./Button";
 
 function Posts() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState();
 
   useEffect(() => {
     const url =
-      "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=4&sortBy=title&sortDirection=asc&searchPhrase=test%20ber&categoryId=2";
+      "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1";
 
     const headers = {
       token: "pj11daaQRz7zUIH56B9Z",
@@ -28,7 +28,7 @@ function Posts() {
 
   return (
     <div id="PostsParent">
-      {posts.map((post) => (
+      {posts?.map((post) => (
         <Post
           key={post.id}
           date={post.created_at}

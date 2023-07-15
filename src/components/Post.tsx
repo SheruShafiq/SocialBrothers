@@ -1,12 +1,12 @@
 import React from "react";
 import "../styles/Post.scss";
 
-interface PostProps {
+export type PostProps = {
   date: string;
   category: string;
   title: string;
   content: string;
-}
+};
 
 function Post(props: PostProps) {
   const { date, category, title, content } = props;

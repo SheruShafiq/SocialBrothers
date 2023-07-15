@@ -50,7 +50,7 @@ export default function Home() {
     categoryPlaceholder: "Geen categorie",
     categoryOptions: [
       { id: 1, label: "Geen categorie", value: "Geen categorie" },
-      { id: 2, label: "Tech", value: "volvo" },
+      { id: 2, label: "Tech", value: "1" },
       { id: 3, label: "Business", value: "saab" },
       { id: 4, label: "Agro", value: "mercedes" },
       { id: 5, label: "Economic", value: "audi" },

@@ -6,7 +6,6 @@ import Button from "./Button";
 
 function Form(props: FormProps) {
   const {
-    formAction,
     formTitle,
     berichtnaamLabel,
     berichtnaamPlaceholder,
@@ -22,20 +21,38 @@ function Form(props: FormProps) {
   const [content, setContent] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(categoryPlaceholder);
   const [image, setImage] = useState("");
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    // Create form data object
-    const formData = {
-      title,
-      content,
-      category_id: selectedCategory,
-      image,
-    };
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("category_id", "1");
+    formData.append("image", image);
 
-    // Log form data
-    console.log(formData);
+    try {
+      const response = await fetch(
+        "https://frontend-case-api.sbdev.nl/api/posts",
+        {
+          method: "POST",
+          headers: {
+            token: "pj11daaQRz7zUIH56B9Z",
+          },
+          body: formData,
+        }
+      );
+
+      if (response.ok) {
+        console.log("Form data submitted successfully");
+        // Perform any additional actions upon successful form submission
+      } else {
+        console.log("Error submitting form data");
+        // Handle error scenarios
+      }
+    } catch (error) {
+      console.log("Error submitting form data", error);
+      // Handle error scenarios
+    }
   };
 
   const handleTitleChange = (e: any) => {
@@ -51,12 +68,12 @@ function Form(props: FormProps) {
   };
 
   const handleImageChange = (e: any) => {
-    setImage(e.target.value);
+    setImage(e.target.files[0]);
   };
 
   return (
     <div id="formComponentParent">
-      <form onSubmit={(event) => event.preventDefault()} id="formComponent">
+      <form onSubmit={handleSubmit} id="formComponent">
         <h1 id="formTitle">{formTitle}</h1>
 
         <h3 className="formLabel">{berichtnaamLabel}</h3>
@@ -91,7 +108,6 @@ function Form(props: FormProps) {
           id="image"
           name="image"
           accept="image/png, image/jpeg"
-          value={image}
           onChange={handleImageChange}
         />
 
@@ -103,7 +119,10 @@ function Form(props: FormProps) {
           onChange={handleContentChange}
         ></textarea>
 
-        <Button submitButtonText="Submit" handleSubmit={handleSubmit} />
+        <Button
+          submitButtonText={submitButtonText}
+          handleSubmit={handleSubmit}
+        />
       </form>
     </div>
   );
