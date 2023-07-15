@@ -14,10 +14,19 @@ a{
     letter-spacing: 0;
     line-height: 21px;
 }
+a:hover{
+    cursor: pointer;
+}
 
 #underline{
     box-sizing: border-box;
-    height: 1.02px;
-    width: 39px;
-    border: 2px solid #E95E30;
+  height: 2px;
+  width: 100%;
+  border: 2px solid #E95E30;
+  margin-top: 8px;
+
+}
+#navMenuParent{
+    display: flex;
+    flex-direction: column;
 }

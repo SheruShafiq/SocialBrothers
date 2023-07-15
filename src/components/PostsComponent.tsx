@@ -27,21 +27,24 @@ function Posts() {
   }, []); // Run the effect only once, on component mount
 
   return (
-    <div id="PostsParent">
-      {posts?.map((post) => (
-        <Post
-          key={post.id}
-          date={post.created_at}
-          category={post.category.name}
-          title={post.title}
-          content={post.content}
+    <div id="PostsComponentParent">
+      <div id="PostsParent">
+        {posts?.map((post: any) => (
+          <Post
+            key={post.id}
+            date={post.created_at}
+            category={post.category.name}
+            title={post.title}
+            content={post.content}
+          />
+        ))}
+      </div>
+      <div id="postsButton">
+        <Button
+          submitButtonText="Laad meer"
+          handleSubmit={() => console.log("hi")}
         />
-      ))}
-
-      <Button
-        submitButtonText="Laad meer"
-        handleSubmit={() => console.log("hi")}
-      />
+      </div>
     </div>
   );
 }

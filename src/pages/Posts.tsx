@@ -7,8 +7,10 @@ import { NavMenuItems } from "./Home";
 import Logo from "../assets/logo.svg";
 import Post from "../components/Post";
 import "../styles/PostsComponent.scss";
+import { useLocation } from "react-router-dom";
 
 function Posts() {
+  const [navMenuItems, setNavMenuItems] = React.useState<NavMenuItems[]>([]);
   const [posts, setPosts] = useState();
 
   useEffect(() => {
@@ -31,10 +33,20 @@ function Posts() {
       });
   }, []); // Run the effect only once, on component mount
 
-  const navMenuItems: NavMenuItems[] = [
-    { heading: "Home", url: "/" },
-    { heading: "Blog", url: "/Posts" },
-  ];
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setNavMenuItems([
+        { heading: "Home", url: "/", active: true },
+        { heading: "Blog", url: "/Posts", active: false },
+      ]);
+    } else if (location.pathname === "/Posts") {
+      setNavMenuItems([
+        { heading: "Home", url: "/", active: false },
+        { heading: "Blog", url: "/Posts", active: true },
+      ]);
+    }
+  }, [location]);
   return (
     <div id="Parent">
       <Header logo={Logo} navMenuItems={navMenuItems} />

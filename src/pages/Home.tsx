@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import "../styles/Home.scss";
 import Logo from "../assets/logo.svg";
 import Form from "../components/Form";
 import Posts from "../components/PostsComponent";
 import Footer from "../components/Footer";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export type NavMenuItems = {
   heading: string;
   url: string;
+  active: boolean;
 };
 
 export type CategoryOption = {
@@ -37,11 +38,15 @@ export type Props = {
 };
 
 export default function Home() {
+  const [navMenuItems, setNavMenuItems] = React.useState<NavMenuItems[]>([]);
   const navigate = useNavigate();
-  const navMenuItems: NavMenuItems[] = [
-    { heading: "Home", url: "/" },
-    { heading: "Blog", url: "/Posts" },
-  ];
+
+  useEffect(() => {
+    setNavMenuItems([
+      { heading: "Home", url: "/", active: true },
+      { heading: "Blog", url: "/Posts", active: false },
+    ]);
+  }, []);
 
   const formData: FormProps = {
     formAction: (event) => event.preventDefault(),
@@ -51,17 +56,32 @@ export default function Home() {
     categoryLabel: "Categorie",
     categoryPlaceholder: "Geen categorie",
     categoryOptions: [
-      { id: 1, label: "Geen categorie", value: "Geen categorie" },
+      { id: 1, label: "Geen categorie", value: "0" },
       { id: 2, label: "Tech", value: "1" },
-      { id: 3, label: "Business", value: "saab" },
-      { id: 4, label: "Agro", value: "mercedes" },
-      { id: 5, label: "Economic", value: "audi" },
+      { id: 3, label: "Business", value: "2" },
+      { id: 4, label: "Agro", value: "3" },
+      { id: 5, label: "Economic", value: "4" },
     ],
     headerAfbeeldingLabel: "Header afbeelding",
     berichtLabel: "Bericht",
-    submitButtonText: "Submit",
+    submitButtonText: "Bericht Aanmaken",
   };
-
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setNavMenuItems([
+        { heading: "Home", url: "/", active: true },
+        { heading: "Blog", url: "/Posts", active: false },
+      ]);
+    } else if (location.pathname === "/Posts") {
+      setNavMenuItems([
+        { heading: "Home", url: "/", active: false },
+        { heading: "Blog", url: "/Posts", active: true },
+      ]);
+    } else {
+      navigate("/");
+    }
+  }, [location]);
   return (
     <div id="Parent">
       <Header logo={Logo} navMenuItems={navMenuItems} />
@@ -70,7 +90,6 @@ export default function Home() {
         <Posts />
       </div>
       <Footer />
-      <button onClick={() => navigate("/Posts")}>TAKE ME</button>
     </div>
   );
 }

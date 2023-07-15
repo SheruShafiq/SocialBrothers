@@ -27,7 +27,7 @@ function Form(props: FormProps) {
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("category_id", "1");
+    formData.append("category_id", selectedCategory);
     formData.append("image", image);
 
     try {
@@ -119,10 +119,12 @@ function Form(props: FormProps) {
           onChange={handleContentChange}
         ></textarea>
 
-        <Button
-          submitButtonText={submitButtonText}
-          handleSubmit={handleSubmit}
-        />
+        <div id="formButton">
+          <Button
+            submitButtonText={submitButtonText}
+            handleSubmit={handleSubmit}
+          />
+        </div>
       </form>
     </div>
   );

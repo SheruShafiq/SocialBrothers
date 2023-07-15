@@ -1,9 +1,21 @@
 #PostsParent{
   display: flex;
+ flex-wrap: wrap;
+}
+
+#postsButton{
+  margin-top: 114px;
+  width: 158px;
+  align-self: center;
+}
+
+#PostsComponentParent{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   width: 642px;
   margin-left: 24px;
  padding-left: 24px;
  padding-top: 24px;
  background-color: #FFFFFF;
- flex-wrap: wrap;
 }
