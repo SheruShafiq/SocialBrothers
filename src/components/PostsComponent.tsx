@@ -2,42 +2,61 @@ import React, { useEffect, useState } from "react";
 import "../styles/Posts.scss";
 import Post from "./Post";
 import Button from "./Button";
+interface PostType {
+  id: string;
+  created_at: string;
+  category: {
+    name: string;
+  };
+  title: string;
+  content: string;
+}
 
-function Posts() {
-  const [posts, setPosts] = useState([]);
-  const [page, setPage] = useState(1); // Set initial page to 1
+interface ButtonProps {
+  submitButtonText: string;
+  handleSubmit: () => void;
+}
 
-  const loadPosts = (pageNum) => {
+const Posts: React.FC = () => {
+  const [posts, setPosts] = useState<PostType[]>([]);
+  const [page, setPage] = useState<number>(1);
+
+  const loadPosts = async (pageNum: number): Promise<void> => {
     const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNum}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
 
     const headers = {
       token: "pj11daaQRz7zUIH56B9Z",
     };
 
-    return fetch(url, {
-      headers: headers,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts((oldPosts) => [...oldPosts, ...data.data]); // Store the fetched posts in state
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    try {
+      const response = await fetch(url, { headers: headers });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setPosts((oldPosts) => [...oldPosts, ...data.data]);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const loadMorePosts = () => {
-    setPage((oldPage) => oldPage + 1); // increment the page number
+  const loadMorePosts = (): void => {
+    loadPosts(page + 1).then(() => setPage((oldPage) => oldPage + 1));
   };
 
   useEffect(() => {
-    loadPosts(page);
-  }, [page]); // Run the effect whenever the page number changes
+    if (page === 1) {
+      //on initial render
+      loadPosts(page);
+    }
+  }, []);
 
   return (
     <div id="PostsComponentParent">
       <div id="PostsParent">
-        {posts?.map((post) => (
+        {posts.map((post: PostType) => (
           <Post
             key={post.id}
             date={post.created_at}
@@ -52,6 +71,6 @@ function Posts() {
       </div>
     </div>
   );
-}
+};
 
 export default Posts;

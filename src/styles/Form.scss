@@ -60,3 +60,18 @@ width: 403px;
     width: 202px;
     align-self: center;
 }
+#inputSectionBox{
+    height: 39px;
+  width: 146px;
+}
+
+#imageInput{
+    background-color: #F5F5F5;
+    height: 39px;
+    width: 146px;
+}
+#imageInput::file-selector-button {
+    visibility: hidden;
+  }
+  
+  

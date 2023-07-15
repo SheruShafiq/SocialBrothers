@@ -1,0 +1,34 @@
+#paginationList{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+}
+#paginationListItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+#paginationListChildren{
+    color: black;
+    text-decoration: none;
+}
+#paginationListNextPageButton{
+    height: 19px;
+    width: 95px;
+    color: #F27623;
+    font-family: Inter;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-decoration: none;
+}
+#rightArrow{
+    height: 19px;
+  width: 10px;
+  color: #F27623;
+}
+

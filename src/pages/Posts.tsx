@@ -8,14 +8,15 @@ import Logo from "../assets/logo.svg";
 import Post from "../components/Post";
 import "../styles/PostsComponent.scss";
 import { useLocation } from "react-router-dom";
+import Pagination from "../components/Pagination";
 
 function Posts() {
   const [navMenuItems, setNavMenuItems] = React.useState<NavMenuItems[]>([]);
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    const url =
-      "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=8&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1";
+    const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage}&perPage=8&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
 
     const headers = {
       token: "pj11daaQRz7zUIH56B9Z",
@@ -26,12 +27,12 @@ function Posts() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setPosts(data.data); // Store the fetched posts in state
+        setPosts(data.data); // Replace the existing posts with the new page of posts
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []); // Run the effect only once, on component mount
+  }, [currentPage]); // Run the effect whenever currentPage changes
 
   const location = useLocation();
   useEffect(() => {
@@ -47,12 +48,15 @@ function Posts() {
       ]);
     }
   }, [location]);
+
+  // A simple pagination component
+
   return (
     <div id="Parent">
-      <Header logo={Logo} navMenuItems={navMenuItems} />
+      <Header logo={Logo} navMenuItems={navMenuItems} title="Blog" />
       <div id="postsViewParent">
         <div id="postsView">
-          {posts?.map((post) => (
+          {posts?.map((post: any) => (
             <Post
               key={post.id}
               date={post.created_at}
@@ -62,8 +66,15 @@ function Posts() {
             />
           ))}
         </div>
+        <div id="paginationNavigator">
+          <Pagination
+            totalPosts={100}
+            postsPerPage={8}
+            paginate={setCurrentPage}
+          />{" "}
+          {/* You need to replace 100 with the actual total number of posts you have */}
+        </div>
       </div>
-      <div id="pageNav"></div>
       <Footer />
     </div>
   );

@@ -15,3 +15,19 @@ margin-right: -8px;
     margin-left: 162px;
     margin-top: 32px;
 }
+#headerTitle{
+    height: 62px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-weight:bold;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 62px;
+    text-align: center;
+}
+#headerTitleContainer{
+    display: flex;
+   align-self: center;
+   margin-left: -120px;
+}

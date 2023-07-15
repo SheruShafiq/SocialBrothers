@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
-import Button from "./Button";
-
+import Button from "@mui/material/Button";
+import ButtonComponent from "./Button";
 function Form(props: FormProps) {
   const {
     formTitle,
@@ -103,13 +103,15 @@ function Form(props: FormProps) {
         </select>
 
         <h3 className="formLabel">{headerAfbeeldingLabel}</h3>
-        <input
-          type="file"
-          id="image"
-          name="image"
-          accept="image/png, image/jpeg"
-          onChange={handleImageChange}
-        />
+        <div id="imageInput">
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/png, image/jpeg"
+            onChange={handleImageChange}
+          />
+        </div>
 
         <h3>{berichtLabel}</h3>
         <textarea
@@ -120,7 +122,7 @@ function Form(props: FormProps) {
         ></textarea>
 
         <div id="formButton">
-          <Button
+          <ButtonComponent
             submitButtonText={submitButtonText}
             handleSubmit={handleSubmit}
           />
