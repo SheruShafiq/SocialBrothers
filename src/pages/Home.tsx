@@ -3,8 +3,9 @@ import Header from "../components/Header";
 import "../styles/Home.scss";
 import Logo from "../assets/logo.svg";
 import Form from "../components/Form";
-import Posts from "../components/Posts";
+import Posts from "../components/PostsComponent";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export type NavMenuItems = {
   heading: string;
@@ -36,9 +37,10 @@ export type Props = {
 };
 
 export default function Home() {
+  const navigate = useNavigate();
   const navMenuItems: NavMenuItems[] = [
-    { heading: "Home", url: "http://www.home.com" },
-    { heading: "Blog", url: "http://www.blog.com" },
+    { heading: "Home", url: "/" },
+    { heading: "Blog", url: "/Posts" },
   ];
 
   const formData: FormProps = {
@@ -68,6 +70,7 @@ export default function Home() {
         <Posts />
       </div>
       <Footer />
+      <button onClick={() => navigate("/Posts")}>TAKE ME</button>
     </div>
   );
 }

@@ -14,11 +14,10 @@ a{
     letter-spacing: 0;
     line-height: 21px;
 }
-#Home {
-    text-decoration: underline solid #E95E30 2px;
-    text-underline-offset: 12px; /* Change this value as needed */
-}
 
-#Blog{
-    text-decoration: none;
+#underline{
+    box-sizing: border-box;
+    height: 1.02px;
+    width: 39px;
+    border: 2px solid #E95E30;
 }
