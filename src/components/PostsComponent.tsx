@@ -4,32 +4,40 @@ import Post from "./Post";
 import Button from "./Button";
 
 function Posts() {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(1); // Set initial page to 1
 
-  useEffect(() => {
-    const url =
-      "https://frontend-case-api.sbdev.nl/api/posts?page=1&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1";
+  const loadPosts = (pageNum) => {
+    const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNum}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
 
     const headers = {
       token: "pj11daaQRz7zUIH56B9Z",
     };
 
-    fetch(url, {
+    return fetch(url, {
       headers: headers,
     })
       .then((response) => response.json())
       .then((data) => {
-        setPosts(data.data); // Store the fetched posts in state
+        setPosts((oldPosts) => [...oldPosts, ...data.data]); // Store the fetched posts in state
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []); // Run the effect only once, on component mount
+  };
+
+  const loadMorePosts = () => {
+    setPage((oldPage) => oldPage + 1); // increment the page number
+  };
+
+  useEffect(() => {
+    loadPosts(page);
+  }, [page]); // Run the effect whenever the page number changes
 
   return (
     <div id="PostsComponentParent">
       <div id="PostsParent">
-        {posts?.map((post: any) => (
+        {posts?.map((post) => (
           <Post
             key={post.id}
             date={post.created_at}
@@ -40,10 +48,7 @@ function Posts() {
         ))}
       </div>
       <div id="postsButton">
-        <Button
-          submitButtonText="Laad meer"
-          handleSubmit={() => console.log("hi")}
-        />
+        <Button submitButtonText="Laad meer" handleSubmit={loadMorePosts} />
       </div>
     </div>
   );
