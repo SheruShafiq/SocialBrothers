@@ -1,3 +1,11 @@
+// This code checks if the Header component renders correctly
+// It also checks if the correct number of NavMenu components are rendered
+// And if the NavMenu components have the correct attributes
+// The NavMenu component has a heading and a url
+// The NavMenu component should have a unique id
+// The NavMenu component should have the text of the heading
+// The NavMenu component should have a href attribute that matches the url
+
 import Header from "../components/Header";
 import "../styles/Header.scss";
 import React from "react";

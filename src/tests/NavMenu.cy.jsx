@@ -22,7 +22,7 @@ describe("NavMenu Component", () => {
       "have.attr",
       "href",
       mockValue.url
-    ); // it has correct href
+    );
   });
 
   it("has the correct id attribute", () => {
@@ -30,10 +30,10 @@ describe("NavMenu Component", () => {
       "have.attr",
       "id",
       mockValue.heading
-    ); // it has correct id
+    );
   });
 
   it("displays the correct heading", () => {
-    cy.get("a.headerLandingPageChildren").should("contain", mockValue.heading); // it has correct content
+    cy.get("a.headerLandingPageChildren").should("contain", mockValue.heading);
   });
 });
