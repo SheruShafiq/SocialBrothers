@@ -1,43 +1,67 @@
 # **Social Brothers Skill Assesment Web App**
 
-## _Tech Stack_
+> ## _Tech Stack_
 
 - React: TypeScript
 - Compiler: Vite
 - Styles: SCSS
 
-## Introduction
+> ## The API
 
-## The case
+- The API used throughout the App is *https://frontend-case-api.sbdev.nl/api/*
+- Both fetch and mutation calls require an API key which can be passed in the header.
+  The key name is `token` and the value is stored in the .env file.
+- Further documentation on the API can be found [here](https://documenter.getpostman.com/view/3923287/UVJWrfnK)
 
-You received an invitation to a Invision project which you have to recreate. When logged in to your account, you can click the inspect button to inspect the exact values being used in the design (margins, colors, etc.).
+> ## App Strucure
 
-Be sure to hand in your project in a state that is ready for production.
+- The App consists of two pages `Home` and `Posts`.
+  `Home` is the landing page that consists of a form to make new posts and a list of the 4 latest posts.
+  The form accepts a title, a banner image, and a description. The data is then sent to the API provided by Social Brothers. The latest posts preview section (Also known as `postsComponent` in the `src/components` folder) is a reusable component that is also used on the `Posts` page. `Posts` also supports pagination and filtering by title as well as some skeleton loading for a better user experience.
+- The mentatlity behind the building of this project was a pageless aproach that I have with all my work, I learnt to work with this mentality at Aer Software Solutions. The idea is to make sure that every aspect of the app is a reusable component. Hence even if the pages directory was removed, so long as the components are strucutred and called with the apropriate data according the designs as props. I should be able to remake the whole pages directory in under 30 minutes.
 
-The functionality that should be in the application is:
+# **Getting started**
 
-- **Creating blogposts**: Blogposts should be able to be created in the form on the left-hand side of the homepage. The endpoint that this data should be submitted to is documented in the [Postman collection](https://documenter.getpostman.com/view/3923287/UVJWrfnK). All inputs should be required. Be sure to make using this form a user-friendly experience.
+## Running the App locally
 
-- **Showing the lastest blogposts**: On the right-hand side there should be a preview of the latest 4 posts. There should also be a button to load the next 4 posts. Those posts should be appended to the current posts, not replaced.
+- Minimum Reqiurements: Node.js v14.17.0
 
-- **Showing the blog archive**: On the "Blog"-page, there should be an archive of all blog posts. These blogs should be able to be paginated, so that the user can navigate to next or previous pages. Tip: use a library for rendering the pagination component. Implementing this yourself in a UX-friendly way will take quite some time. Invest this time in the general UX and functionality of the application.
+### Install dependencies
 
-- **Navigation**: The user should be able to navigate to the different pages through a menu.
+```
+npm install
+```
 
-These are the requirements that we set. Please fill these requirements in a way that you think is most UX-friendly. Also, don't be shy to add any other details that might not explicitely be described hereabove, if you think that it improves the user experience.
+### Running the app locally
 
-## The API
+```
+npm run dev
+```
 
-The API returns file paths relative to the filestorage location of the server. This filestorage location is `{{apiUrl}}/storage`. That means if you receive a path value of '/images/sample-image.pong', it will be hosted al `{{apiUrl}}/storage/images/sample-image.png`. The API documentation is available via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
+---
 
-## What are the ranking criteria?
+## Building the app for deployment
 
-The first thing we look at, is whether the functionalities above are implemented and whether the design has been followed in a detailed manner. This is more or less the minimum to qualify for the next round in the interview process. If that's met, we judge your seniority by the following aspects (in random order):
+### Build command
 
-- Structured, reusable code
-- Perfomance / SEO
-- Maintainability of code
-- Choise of techniques
-- Good understanding of programming principles
-- User experience
-- Additional functionalities/details
+```
+npm run build
+```
+
+- The build will be located in the `dist` folder.
+
+## Testing (Cypress)
+
+### You can open the Cypress testing suite using
+
+```
+npx cypress open
+```
+
+- The `src/tests` folder contains all the necassary component tests. Which will also be visible in the
+  testing suite.
+- More documentation on Cypress can be found at [Cypress Docs](https://docs.cypress.io/)
+
+### Testing deployed build (Netlify):
+
+*https://64b403f441c2c541f0fabdb5--lucky-alpaca-148ec7.netlify.app/*
