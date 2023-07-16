@@ -4,7 +4,7 @@ import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
 import Button from "@mui/material/Button";
 import ButtonComponent from "./Button";
-import Camera from "../assets/camera.svg";
+import Camera from "../assets/cameraStyle.svg";
 function Form(props: FormProps) {
   const {
     formTitle,
