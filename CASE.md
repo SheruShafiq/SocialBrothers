@@ -1,12 +1,10 @@
-# **Social Brothers Skill Assesment Web App**
-
-## _Tech Stack_
-
-- React: TypeScript
-- Compiler: Vite
-- Styles: SCSS
+# Social Brothers
 
 ## Introduction
+
+Thank you for the nice conversation! As promised, the front-end case. You can e-mail the finished case to me (Luuk@socialbrothers.nl).
+
+Good luck!
 
 ## The case
 
