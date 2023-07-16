@@ -68,11 +68,10 @@ function Posts() {
         </div>
         <div id="paginationNavigator">
           <Pagination
-            totalPosts={100}
+            totalPosts={102}
             postsPerPage={8}
             paginate={setCurrentPage}
           />{" "}
-          {/* You need to replace 100 with the actual total number of posts you have */}
         </div>
       </div>
       <Footer />

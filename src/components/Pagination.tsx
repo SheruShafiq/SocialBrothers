@@ -29,7 +29,7 @@ const Pagination: React.FC<PaginationProps> = ({
             <a
               id="paginationListChildren"
               onClick={() => paginate(number)}
-              href="#"
+              href={`?` + number.toString()}
             >
               {number}
             </a>
@@ -39,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
           <a
             id="paginationListNextPageButton"
             onClick={() => paginate(nextPage)}
-            href="#"
+            href={`?` + nextPage.toString()}
           >
             Volgende Pagina
           </a>
