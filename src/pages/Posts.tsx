@@ -9,6 +9,7 @@ import Post from "../components/Post";
 import "../styles/PostsComponent.scss";
 import { useLocation } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import GrowBox from "../components/GrowBox";
 
 function Posts() {
   const [navMenuItems, setNavMenuItems] = React.useState<NavMenuItems[]>([]);
@@ -74,6 +75,7 @@ function Posts() {
           />{" "}
         </div>
       </div>
+      <GrowBox />
       <Footer />
     </div>
   );
