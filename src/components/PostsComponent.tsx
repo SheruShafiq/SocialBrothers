@@ -25,7 +25,9 @@ const Posts: React.FC = () => {
 
   // The loadPosts function fetches the posts from the API. It takes a page number as an argument, and returns a Promise. It uses the fetch API to make a GET request to the API. It uses the page number to set the url of the request. It uses the token provided in the environment variable to authenticate the request. If the response is successful, it parses the response into a JSON object. It then sets the posts state variable using the data from the response.
   const loadPosts = async (pageNum: number): Promise<void> => {
-    const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNum}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
+    const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNum}&perPage=${
+      window.innerWidth > 1440 ? 6 : 4
+    }&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
     // console.log(import.meta.env);
     const headers = {
       token: import.meta.env.VITE_APP_TOKEN,
