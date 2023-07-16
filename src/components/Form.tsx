@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
 import Button from "@mui/material/Button";
 import ButtonComponent from "./Button";
 import Camera from "../assets/cameraStyle.svg";
+
 function Form(props: FormProps) {
   const {
     formTitle,
@@ -18,18 +19,22 @@ function Form(props: FormProps) {
     submitButtonText,
   } = props;
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(categoryPlaceholder);
-  const [image, setImage] = useState("");
-  const handleSubmit = async (e: any) => {
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>(categoryPlaceholder);
+  const [image, setImage] = useState<File | null>(null);
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category_id", selectedCategory);
-    formData.append("image", image);
+    if (image) {
+      formData.append("image", image);
+    }
 
     try {
       const response = await fetch(
@@ -56,20 +61,21 @@ function Form(props: FormProps) {
     }
   };
 
-  const handleTitleChange = (e: any) => {
+  const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
   };
 
-  const handleContentChange = (e: any) => {
+  const handleContentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
 
-  const handleCategoryChange = (e: any) => {
+  const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedCategory(e.target.value);
   };
 
-  const handleImageChange = (e: any) => {
-    setImage(e.target.files[0]);
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files ? e.target.files[0] : null;
+    setImage(file);
   };
 
   return (

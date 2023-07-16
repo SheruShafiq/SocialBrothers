@@ -1,12 +1,25 @@
 import React from "react";
 import "../styles/Pagination.scss";
 import Arrow from "../assets/arrowRight.svg";
-const Pagination = ({ totalPosts, postsPerPage, paginate }) => {
-  const pageNumbers = [];
+
+interface PaginationProps {
+  totalPosts: number;
+  postsPerPage: number;
+  paginate: (pageNumber: number) => void;
+}
+
+const Pagination: React.FC<PaginationProps> = ({
+  totalPosts,
+  postsPerPage,
+  paginate,
+}) => {
+  const pageNumbers: number[] = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     pageNumbers.push(i);
   }
+
+  const nextPage = pageNumbers[pageNumbers.length - 1] + 1;
 
   return (
     <nav>
@@ -16,7 +29,7 @@ const Pagination = ({ totalPosts, postsPerPage, paginate }) => {
             <a
               id="paginationListChildren"
               onClick={() => paginate(number)}
-              href=""
+              href="#"
             >
               {number}
             </a>
@@ -25,8 +38,8 @@ const Pagination = ({ totalPosts, postsPerPage, paginate }) => {
         <li id="paginationListItem">
           <a
             id="paginationListNextPageButton"
-            onClick={() => paginate(number)}
-            href=""
+            onClick={() => paginate(nextPage)}
+            href="#"
           >
             Volgende Pagina
           </a>
