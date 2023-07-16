@@ -2,7 +2,15 @@ import React from "react";
 import "../styles/NavMenu.scss";
 import { useNavigate } from "react-router-dom";
 
-export default function NavMenu(value: any) {
+type Props = {
+  value: {
+    heading: string;
+    active: boolean;
+    url: string;
+  };
+};
+
+export default function NavMenu(value: Props) {
   const navigate = useNavigate();
   const data = value.value;
   return (
