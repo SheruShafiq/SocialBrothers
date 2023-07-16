@@ -64,4 +64,4 @@ npx cypress open
 
 ### Testing deployed build (Netlify):
 
-*https://64b403f441c2c541f0fabdb5--lucky-alpaca-148ec7.netlify.app/*
+*https://lucky-alpaca-148ec7.netlify.app/*

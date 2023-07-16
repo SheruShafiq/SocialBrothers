@@ -6,6 +6,7 @@ import Form from "../components/Form";
 import Posts from "../components/PostsComponent";
 import Footer from "../components/Footer";
 import { useLocation, useNavigate } from "react-router-dom";
+import GrowBox from "../components/GrowBox";
 
 export type NavMenuItems = {
   heading: string;
@@ -81,6 +82,7 @@ export default function Home() {
       navigate("/");
     }
   }, [location]);
+
   return (
     <div id="Parent">
       <Header logo={Logo} navMenuItems={navMenuItems} />
@@ -88,6 +90,7 @@ export default function Home() {
         <Form {...formData} />
         <Posts />
       </div>
+      <GrowBox />
       <Footer />
     </div>
   );
