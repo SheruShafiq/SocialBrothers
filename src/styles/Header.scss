@@ -5,6 +5,8 @@
   height: 208px;
   width: 100%;
   justify-content: space-between;
+  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat; /* Do not repeat the image */
 }
 #logoHeaderLandingPage {
   height: 57px;
@@ -34,7 +36,7 @@
     display: flex;
     // flex-direction: column;
     height: 208px;
-    width: auto;
+    width: 100%;
     justify-content: space-between;
     margin-left: -8px;
     margin-right: -8px;
