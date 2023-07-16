@@ -139,9 +139,11 @@ input[type="file"]::before {
 #contentError {
   font-family: Inter;
   color: red;
-  //background-color: $colorSecondary;
   font-size: 12px;
   width: max-content;
-  // padding: 5px;
-  // border-radius: 10px;
+}
+
+textarea {
+  font-family: Inter;
+  padding: 5px;
 }
