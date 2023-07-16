@@ -79,6 +79,7 @@ function Form(props: FormProps) {
 
         <h3 className="formLabel">{berichtnaamLabel}</h3>
         <input
+          required
           type="text"
           name="title"
           placeholder={berichtnaamPlaceholder}
@@ -108,6 +109,7 @@ function Form(props: FormProps) {
           <div id="imageInput">
             <img src={Camera} alt="" id="imagePreview" />
             <input
+              required
               type="file"
               id="image"
               name="image"
