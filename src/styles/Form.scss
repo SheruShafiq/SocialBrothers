@@ -96,11 +96,12 @@ input[type="file"]::before {
   color: white;
   font-family: Inter;
   font-size: 10px;
+  margin-left: 10px;
 }
 
 #imagePreview {
   width: 18px;
-  margin-right: 16px;
+  // margin-right: 16px;
   filter: invert(55%) sepia(3%) saturate(9%) hue-rotate(318deg) brightness(97%)
     contrast(85%);
 }
@@ -130,7 +131,9 @@ input[type="file"]::before {
 
 @media screen and (max-width: 1160px) {
   #formComponentParent {
-    width: auto;
+    width: 90%;
+    flex-wrap: wrap;
+    flex-direction: default;
   }
 }
 .checkMark {
