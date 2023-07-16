@@ -49,10 +49,10 @@ function Form(props: FormProps) {
       );
 
       if (response.ok) {
-        console.log("Form data submitted successfully");
+        // console.log("Form data submitted successfully");
         // Perform any additional actions upon successful form submission
       } else {
-        console.log("Error submitting form data");
+        // console.log("Error submitting form data");
         // Handle error scenarios
       }
     } catch (error) {
@@ -78,7 +78,7 @@ function Form(props: FormProps) {
     setImage(file);
   };
   useEffect(() => {
-    console.log(selectedCategory);
+    //console.log(selectedCategory);
   }, [selectedCategory]);
   return (
     <div id="formComponentParent">
