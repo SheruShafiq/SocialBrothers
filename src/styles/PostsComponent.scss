@@ -1,37 +1,37 @@
-#PostsParent{
+#PostsParent {
   display: flex;
- flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-#postsButton{
+#postsButton {
   padding-top: 90px;
   width: 158px;
   align-self: center;
   padding-bottom: 24px;
 }
 
-#PostsComponentParent{
+#PostsComponentParent {
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 642px;
   margin-left: 24px;
- padding-left: 24px;
- padding-top: 24px;
- background-color: #FFFFFF;
+  padding-left: 24px;
+  padding-top: 24px;
+  background-color: #ffffff;
 }
 
 @media screen and (max-width: 1160px) {
-  #PostsParent{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+  #PostsParent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  #PostsComponentParent{
+  #PostsComponentParent {
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-top: 24px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     width: auto;
     margin-left: 0px;
     padding-left: 0px;

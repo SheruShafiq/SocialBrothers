@@ -19,7 +19,7 @@ function Posts() {
     const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage}&perPage=8&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
 
     const headers = {
-      token: "pj11daaQRz7zUIH56B9Z",
+      token: import.meta.env.VITE_APP_TOKEN,
     };
 
     fetch(url, {

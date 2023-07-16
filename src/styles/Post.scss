@@ -1,32 +1,32 @@
-#bannerImg{
-    height: 72px;
+#bannerImg {
+  height: 72px;
   width: 285px;
-  background-image: url('../assets/postbanner.png');
+  background-image: url("../assets/postbanner.png");
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-align-items: end;
+  align-items: end;
 }
-#bannerText{
-padding-left: 16px;
-padding-right: 16px;
-  color: #FFFFFF;
+#bannerText {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #ffffff;
   font-family: Inter;
   font-size: 8px;
   font-style: italic;
   letter-spacing: 0;
   line-height: 10px;
 }
-#postParent{
-    height: 217px;
-    width: 285px;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-    margin-left: 24px;
-    margin-bottom: 24px;
+#postParent {
+  height: 217px;
+  width: 285px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin-left: 24px;
+  margin-bottom: 24px;
 }
-#postTitle{
-    height: 29px;
+#postTitle {
+  height: 29px;
   width: 253px;
   color: #262626;
   font-family: Inter;
@@ -34,18 +34,18 @@ padding-right: 16px;
   font-weight: bold;
   letter-spacing: 0;
 }
-#postContent{
-    height: 76px;
-    width: 253px;
-    color: #868686;
-    font-family: Inter;
-    font-size: 12px;
-    letter-spacing: 0;
-   
-    font-weight: 100;
+#postContent {
+  height: 76px;
+  width: 253px;
+  color: #868686;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+
+  font-weight: 100;
 }
-#postInfo{
-    margin: 16px;
+#postInfo {
+  margin: 16px;
 }
 
 #bannerImg.is-loading,
@@ -82,7 +82,7 @@ padding-right: 16px;
 }
 
 @media screen and (max-width: 1160px) {
-  #postParent{
+  #postParent {
     margin-left: 0px;
     //margin-bottom: 24px;
   }

@@ -1,55 +1,54 @@
-
 #headerLandingPage {
-    background-image: url("../assets/Mask.png");
-    display: flex;
-    flex-direction: row;
-    height: 208px;
-    width: 1440px;
-justify-content: space-between;
-margin-left: -8px;
-margin-right: -8px;
+  background-image: url("../assets/Mask.png");
+  display: flex;
+  flex-direction: row;
+  height: 208px;
+  width: 1440px;
+  justify-content: space-between;
+  margin-left: -8px;
+  margin-right: -8px;
 }
 #logoHeaderLandingPage {
-    height: 57px;
-    width: 240px;
-    margin-left: 162px;
-    margin-top: 32px;
+  height: 57px;
+  width: 240px;
+  margin-left: 162px;
+  margin-top: 32px;
 }
-#headerTitle{
-    height: 62px;
-    color: #FFFFFF;
-    font-family: Inter;
-    font-weight:bold;
-    font-size: 48px;
-    font-weight: bold;
-    letter-spacing: 0;
-    line-height: 62px;
-    text-align: center;
+#headerTitle {
+  height: 62px;
+  color: #ffffff;
+  font-family: Inter;
+  font-weight: bold;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 62px;
+  text-align: center;
 }
-#headerTitleContainer{
-    display: flex;
-   align-self: center;
-   margin-left: -120px;
+#headerTitleContainer {
+  display: flex;
+  align-self: center;
+  margin-left: -120px;
 }
 @media screen and (max-width: 1160px) {
-    #headerLandingPage {
-        background-image: url("../assets/Mask.png");
-        display: flex;
-       // flex-direction: column;
-        height: 208px;
-        width: auto;
+  #headerLandingPage {
+    background-image: url("../assets/Mask.png");
+    display: flex;
+    // flex-direction: column;
+    height: 208px;
+    width: auto;
     justify-content: space-between;
     margin-left: -8px;
     margin-right: -8px;
-    }
-    #HeaderLandingPageNavMenu{
-        margin-top: 154px;
-        margin-right: 280px;
-    }
-    #logoHeaderLandingPage{
-        margin-left: 266px;
-    }
-    #headerTitleContainer{
-        margin-top: 15px
-    }
+  }
+  #HeaderLandingPageNavMenu {
+    margin-top: 154px;
+    margin-right: 280px;
+  }
+  #logoHeaderLandingPage {
+    margin-left: 266px;
+  }
+  #headerTitleContainer {
+    margin-top: 15px;
+  }
 }

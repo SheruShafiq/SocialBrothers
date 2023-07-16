@@ -1,38 +1,37 @@
-#paginationList{
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    justify-content: center;
+#paginationList {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
 }
-#paginationListItem{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style-type: none;
-    margin-right: 8px;
-    margin-left: 8px;
+#paginationListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  margin-right: 8px;
+  margin-left: 8px;
 }
-#paginationListChildren{
-    color: black;
-    text-decoration: none;
-    font-weight: 300;
-    font-size: 12px;
+#paginationListChildren {
+  color: black;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 12px;
 }
-#paginationListNextPageButton{
-    height: 19px;
-    width: 95px;
-    color: #F27623;
-    font-family: Inter;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: 19px;
-    text-decoration: none;
-    width: 113px;
-    
+#paginationListNextPageButton {
+  height: 19px;
+  width: 95px;
+  color: #f27623;
+  font-family: Inter;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 19px;
+  text-decoration: none;
+  width: 113px;
 }
-#rightArrow{
-    height: 19px;
+#rightArrow {
+  height: 19px;
   width: 10px;
-  filter: invert(61%) sepia(33%) saturate(4916%) hue-rotate(345deg) brightness(97%) contrast(95%);;
+  filter: invert(61%) sepia(33%) saturate(4916%) hue-rotate(345deg)
+    brightness(97%) contrast(95%);
 }
-

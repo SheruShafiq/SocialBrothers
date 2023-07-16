@@ -1,49 +1,48 @@
-#HeaderLandingPageNavMenu{
-    height: 30px;
-    width: 123px;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 162px;
-    margin-top: 32px;
+#HeaderLandingPageNavMenu {
+  height: 30px;
+  width: 123px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 162px;
+  margin-top: 32px;
 }
-a{
-    color: white;
-    font-family: "Inter";
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 21px;
+a {
+  color: white;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 21px;
 }
-a:hover{
-    cursor: pointer;
+a:hover {
+  cursor: pointer;
 }
 
-#underline{
-    box-sizing: border-box;
+#underline {
+  box-sizing: border-box;
   height: 2px;
   width: 100%;
-  border: 2px solid #E95E30;
+  border: 2px solid #e95e30;
   margin-top: 8px;
-
 }
-#navMenuParent{
-    display: flex;
-    flex-direction: column;
+#navMenuParent {
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 1160px) {
-    #headerLandingPage {
-        background-image: url("../assets/Mask.png");
-        display: flex;
-       // flex-direction: column;
-        height: 208px;
-        width: auto;
+  #headerLandingPage {
+    background-image: url("../assets/Mask.png");
+    display: flex;
+    // flex-direction: column;
+    height: 208px;
+    width: auto;
     justify-content: space-between;
     margin-left: -8px;
     margin-right: -8px;
-    }
-    #HeaderLandingPageNavMenu{
-        margin-top: 154px;
-        margin-right: 280px;
-    }
+  }
+  #HeaderLandingPageNavMenu {
+    margin-top: 154px;
+    margin-right: 280px;
+  }
 }

@@ -23,9 +23,9 @@ const Posts: React.FC = () => {
 
   const loadPosts = async (pageNum: number): Promise<void> => {
     const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${pageNum}&perPage=4&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
-
+    console.log(import.meta.env);
     const headers = {
-      token: "pj11daaQRz7zUIH56B9Z",
+      token: import.meta.env.VITE_APP_TOKEN,
     };
 
     try {
