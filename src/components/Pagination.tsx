@@ -5,12 +5,14 @@ import Arrow from "../assets/arrowRight.svg";
 interface PaginationProps {
   totalPosts: number;
   postsPerPage: number;
+  currentPage: number;
   paginate: (pageNumber: number) => void;
 }
 
 const Pagination: React.FC<PaginationProps> = ({
   totalPosts,
   postsPerPage,
+  currentPage,
   paginate,
 }) => {
   const pageNumbers: number[] = [];
@@ -19,30 +21,33 @@ const Pagination: React.FC<PaginationProps> = ({
     pageNumbers.push(i);
   }
 
-  const nextPage = pageNumbers[pageNumbers.length - 1] + 1;
+  console.log(currentPage);
 
   return (
     <nav>
       <ul id="paginationList">
         {pageNumbers.map((number) => (
-          <li key={number} id="paginationListItem">
-            <a
+          <li
+            key={number}
+            id="paginationListItem"
+            className={currentPage == number ? "activePage" : "notActivePage"}
+          >
+            <button
               id="paginationListChildren"
               onClick={() => paginate(number)}
-              href={`?` + number.toString()}
             >
               {number}
-            </a>
+            </button>
           </li>
         ))}
+
         <li id="paginationListItem">
-          <a
+          <button
             id="paginationListNextPageButton"
-            onClick={() => paginate(nextPage)}
-            href={`?` + nextPage.toString()}
+            onClick={() => paginate(currentPage + 1)}
           >
             Volgende Pagina
-          </a>
+          </button>
           <img src={Arrow} alt="RightArrow" id="rightArrow" />
         </li>
       </ul>

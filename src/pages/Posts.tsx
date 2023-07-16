@@ -72,7 +72,8 @@ function Posts() {
             totalPosts={102}
             postsPerPage={8}
             paginate={setCurrentPage}
-          />{" "}
+            currentPage={currentPage}
+          />
         </div>
       </div>
       <GrowBox />
