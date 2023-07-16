@@ -23,14 +23,27 @@ function Post(props: PostProps) {
     };
   }, []);
 
+  const formattedDate = formatDate(date);
+
+  function formatDate(dateString: string) {
+    const dateObj = new Date(dateString);
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const year = dateObj.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
+
   return (
     <div id="postParent">
       <div id="bannerImg" className={isLoading ? "is-loading" : ""}>
         {isLoading ? (
-          <></>
+          <>
+            <p className="skeleton-text" id="bannerText"></p>
+            <p className="skeleton-text" id="bannerText"></p>
+          </>
         ) : (
           <>
-            <p id="bannerText">{date}</p>
+            <p id="bannerText">{formattedDate}</p>
             <p id="bannerText">{category}</p>
           </>
         )}

@@ -79,6 +79,7 @@ function Form(props: FormProps) {
 
         <h3 className="formLabel">{berichtnaamLabel}</h3>
         <input
+          id="title"
           required
           type="text"
           name="title"

@@ -3,7 +3,7 @@ import "../styles/Footer.scss";
 function Footer() {
   return (
     <div id="footer">
-      <p id="footerText">Copyright Social Brothers - 2023</p>
+      <p id="footerText">&copy; Copyright Social Brothers - 2023</p>
     </div>
   );
 }
