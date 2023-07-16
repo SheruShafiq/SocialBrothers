@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
@@ -77,7 +77,9 @@ function Form(props: FormProps) {
     const file = e.target.files ? e.target.files[0] : null;
     setImage(file);
   };
-
+  useEffect(() => {
+    console.log(selectedCategory);
+  }, [selectedCategory]);
   return (
     <div id="formComponentParent">
       <form onSubmit={handleSubmit} id="formComponent">
