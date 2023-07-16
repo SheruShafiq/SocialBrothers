@@ -80,3 +80,10 @@ padding-right: 16px;
     background-position-x: -40%;
   }
 }
+
+@media screen and (max-width: 1160px) {
+  #postParent{
+    margin-left: 0px;
+    //margin-bottom: 24px;
+  }
+}

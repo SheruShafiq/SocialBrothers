@@ -30,3 +30,20 @@ a:hover{
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 1160px) {
+    #headerLandingPage {
+        background-image: url("../assets/Mask.png");
+        display: flex;
+       // flex-direction: column;
+        height: 208px;
+        width: auto;
+    justify-content: space-between;
+    margin-left: -8px;
+    margin-right: -8px;
+    }
+    #HeaderLandingPageNavMenu{
+        margin-top: 154px;
+        margin-right: 280px;
+    }
+}

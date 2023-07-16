@@ -2,7 +2,6 @@
   display: flex;
  flex-wrap: wrap;
 }
-
 #postsButton{
   padding-top: 90px;
   width: 158px;
@@ -19,4 +18,24 @@
  padding-left: 24px;
  padding-top: 24px;
  background-color: #FFFFFF;
+}
+
+@media screen and (max-width: 1160px) {
+  #PostsParent{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  #PostsComponentParent{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 24px;
+    background-color: #FFFFFF;
+    width: auto;
+    margin-left: 0px;
+    padding-left: 0px;
+    width: 100%;
+    align-items: center;
+  }
 }
