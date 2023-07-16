@@ -1,6 +1,6 @@
 # **Social Brothers Skill Assesment Web App**
 
-> ## _Tech Stack_
+> ## Tech Stack
 
 - React: TypeScript
 - Compiler: Vite
