@@ -1,77 +1,123 @@
+$formComponentParentWidth: 451px;
+$formComponentParentHeight: 659px;
+$colorPrimary: #2B2B2B;
+$colorSecondary: #404040;
+$colorBackground: #f5f5f5f1;
+$colorButtonBackground: #7D7D7D;
+
 #formComponent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 611px;
-    width: 403px;
-    margin: 24px;
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 611px;
+  margin: 24px;
 }
 
 #bericht {
-    height: 214px;
-    width: 403px;
+  height: 214px;
+ // width: 403px;
 }
 
 #formComponentParent {
-    height: 659px;
-    width: 451px;
-    background-color: #FFFFFF;
+  height: $formComponentParentHeight;
+  width: $formComponentParentWidth;
+  background-color: #FFFFFF;
 }
 
 h3,
 h1 {
-    color: #2B2B2B;
-    font-family: Inter;
+  color: $colorPrimary;
+  font-family: Inter;
 }
 
-h3{
-    height: 15px;
-  width: 403px;
-  color: #404040;
+h3 {
+  height: 15px;
+ // width: 403px;
+  color: $colorSecondary;
   font-family: Inter;
+  font-weight: 400;
   font-size: 12px;
   letter-spacing: 0;
   line-height: 13px;
+  margin-top: 24px;
 }
-h1{
-  color: #2B2B2B;
+
+h1 {
+  color: $colorPrimary;
   font-family: Inter;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 29px;
 }
+
 input, textarea, select {
-    border: none;
-    background-color: #f5f5f5f1;
+  border: none;
+  background-color: $colorBackground;
 }
-input, select{
-height: 39px;
-width: 403px;
+
+input, select {
+  height: 39px;
+//  width: 403px;
 }
-#image{
-    background-color: white;
-    height: auto;
-    width: auto;
+
+#formButton {
+  margin-top: 24px;
+  width: 202px;
+  align-self: center;
 }
-#formButton{
-    margin-top: 24px;
-    width: 202px;
-    align-self: center;
-}
-#inputSectionBox{
-    height: 39px;
+
+#inputSectionBox {
+  height: 39px;
   width: 146px;
 }
 
-#imageInput{
-    background-color: #F5F5F5;
-    height: 39px;
-    width: 146px;
+input[type='file']::-webkit-file-upload-button {
+  visibility: hidden;
 }
-#imageInput::file-selector-button {
-    visibility: hidden;
-  }
-  
-  
+
+input[type='file']::before {
+  content: 'Kies Bestand';
+  background-color: $colorButtonBackground;
+  padding: 10px;
+  border-color: $colorButtonBackground;
+  border-radius: 40%;
+  color: white;
+  font-family: Inter;
+  font-size: 10px;
+}
+
+#imagePreview {
+  width: 18px;
+  margin-right: 16px;
+  filter: invert(55%) sepia(3%) saturate(9%) hue-rotate(318deg) brightness(97%) contrast(85%);
+}
+
+#image {
+  height: auto;
+}
+
+#imageInput {
+  // width: 146px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#test {
+  width: 146px;
+  background-color: $colorBackground;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+#geen{
+    height: 15px;
+    width: 346px;
+    color: #C5C5C5;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 0;
+    line-height: 15px;
+}

@@ -4,6 +4,7 @@ import "../styles/Form.scss";
 import { FormProps } from "../pages/Home";
 import Button from "@mui/material/Button";
 import ButtonComponent from "./Button";
+import Camera from "../assets/camera.svg";
 function Form(props: FormProps) {
   const {
     formTitle,
@@ -92,8 +93,8 @@ function Form(props: FormProps) {
           value={selectedCategory}
           onChange={handleCategoryChange}
         >
-          <option disabled value={categoryPlaceholder}>
-            {categoryPlaceholder}
+          <option id="geen" value="" selected hidden>
+            Geen categorie
           </option>
           {categoryOptions.map((option) => (
             <option key={option.id} value={option.id}>
@@ -103,16 +104,18 @@ function Form(props: FormProps) {
         </select>
 
         <h3 className="formLabel">{headerAfbeeldingLabel}</h3>
-        <div id="imageInput">
-          <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/png, image/jpeg"
-            onChange={handleImageChange}
-          />
+        <div id="test">
+          <div id="imageInput">
+            <img src={Camera} alt="" id="imagePreview" />
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept="image/png, image/jpeg"
+              onChange={handleImageChange}
+            />
+          </div>
         </div>
-
         <h3>{berichtLabel}</h3>
         <textarea
           id="bericht"
