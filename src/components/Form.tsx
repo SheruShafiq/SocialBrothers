@@ -69,7 +69,22 @@ function Form(props: FormProps) {
   };
 
   const handleContentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value);
+    const newContent = e.target.value;
+    setContent(newContent);
+
+    if (newContent.length > 255) {
+      // Show error message
+      const errorElement = document.getElementById("contentError");
+      if (errorElement) {
+        errorElement.textContent = "No more than 255 characters allowed";
+      }
+    } else {
+      // Hide error message
+      const errorElement = document.getElementById("contentError");
+      if (errorElement) {
+        errorElement.textContent = "";
+      }
+    }
   };
 
   const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -138,6 +153,7 @@ function Form(props: FormProps) {
           value={content}
           onChange={handleContentChange}
         ></textarea>
+        <p id="contentError" className="errorMessage"></p>
 
         <div id="formButton">
           <ButtonComponent
