@@ -1,19 +1,21 @@
-#footer{
-    display: flex;
-    justify-content: center;
-    height: 32px;
-    width: 1440px;
-    background-color: #262626;
-    margin-bottom: -8px;
+#footer {
+  display: flex;
+  justify-content: center;
+  height: 32px;
+  background-color: #262626;
+  margin-bottom: -8px;
+  width: 100%;
 }
 
-#footerText{
-    color: #FFFFFF;
-    font-family: Inter;
-    font-size: 12px;
-    font-weight: 0;
-    letter-spacing: 0;
-    line-height: 15px;
-    margin-top: 8px;
-    font-weight: 200;
+#footerText {
+  width: 100%;
+  color: #ffffff;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 0;
+  letter-spacing: 0;
+  line-height: 15px;
+  margin-top: 8px;
+  font-weight: 200;
+  text-align: center;
 }

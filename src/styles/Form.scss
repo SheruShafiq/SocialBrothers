@@ -1,9 +1,9 @@
 $formComponentParentWidth: 451px;
 $formComponentParentHeight: 659px;
-$colorPrimary: #2B2B2B;
+$colorPrimary: #2b2b2b;
 $colorSecondary: #404040;
 $colorBackground: #f5f5f5f1;
-$colorButtonBackground: #7D7D7D;
+$colorButtonBackground: #7d7d7d;
 
 @media screen and (max-width: 600px) {
   #formComponent {
@@ -22,13 +22,13 @@ $colorButtonBackground: #7D7D7D;
 
 #bericht {
   height: 214px;
- // width: 403px;
+  // width: 403px;
 }
 
 #formComponentParent {
   height: $formComponentParentHeight;
   width: $formComponentParentWidth;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 h3,
@@ -39,7 +39,7 @@ h1 {
 
 h3 {
   height: 15px;
- // width: 403px;
+  // width: 403px;
   color: $colorSecondary;
   font-family: Inter;
   font-weight: 400;
@@ -58,17 +58,21 @@ h1 {
   line-height: 29px;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   border: none;
   background-color: $colorBackground;
 }
 
-input, select {
+input,
+select {
   height: 39px;
-//  width: 403px;
+  //  width: 403px;
 }
 
 #formButton {
+  display: flex;
   margin-top: 24px;
   width: 202px;
   align-self: center;
@@ -79,12 +83,12 @@ input, select {
   width: 146px;
 }
 
-input[type='file']::-webkit-file-upload-button {
+input[type="file"]::-webkit-file-upload-button {
   visibility: hidden;
 }
 
-input[type='file']::before {
-  content: 'Kies Bestand';
+input[type="file"]::before {
+  content: "Kies Bestand";
   background-color: $colorButtonBackground;
   padding: 10px;
   border-color: $colorButtonBackground;
@@ -97,7 +101,8 @@ input[type='file']::before {
 #imagePreview {
   width: 18px;
   margin-right: 16px;
-  filter: invert(55%) sepia(3%) saturate(9%) hue-rotate(318deg) brightness(97%) contrast(85%);
+  filter: invert(55%) sepia(3%) saturate(9%) hue-rotate(318deg) brightness(97%)
+    contrast(85%);
 }
 
 #image {
@@ -119,7 +124,7 @@ input[type='file']::before {
   padding-bottom: 14px;
 }
 
-#title::placeholder{
+#title::placeholder {
   font-style: italic;
 }
 
@@ -127,4 +132,7 @@ input[type='file']::before {
   #formComponentParent {
     width: auto;
   }
+}
+.checkMark {
+  margin-left: 10px;
 }

@@ -5,7 +5,7 @@ import { FormProps } from "../pages/Home";
 import Button from "@mui/material/Button";
 import ButtonComponent from "./Button";
 import Camera from "../assets/cameraStyle.svg";
-
+import CheckMark from "../assets/checkMark.svg";
 function Form(props: FormProps) {
   const {
     formTitle,
@@ -20,7 +20,9 @@ function Form(props: FormProps) {
   } = props;
 
   const [title, setTitle] = useState<string>("");
+  const [sent, setSent] = useState<boolean>(false);
   const [content, setContent] = useState<string>("");
+  const [imageSelected, setImageSelected] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] =
     useState<string>(categoryPlaceholder);
   const [image, setImage] = useState<File | null>(null);
@@ -49,6 +51,7 @@ function Form(props: FormProps) {
       );
 
       if (response.ok) {
+        setSent(true);
         // console.log("Form data submitted successfully");
         // Perform any additional actions upon successful form submission
       } else {
@@ -76,6 +79,7 @@ function Form(props: FormProps) {
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     setImage(file);
+    setImageSelected(true);
   };
   useEffect(() => {
     //console.log(selectedCategory);
@@ -140,6 +144,14 @@ function Form(props: FormProps) {
             submitButtonText={submitButtonText}
             handleSubmit={handleSubmit}
           />
+          {sent && (
+            <img
+              src={CheckMark}
+              alt=""
+              className="checkMark"
+              id="imagePreview"
+            />
+          )}
         </div>
       </form>
     </div>
