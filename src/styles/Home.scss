@@ -18,7 +18,15 @@
   margin-bottom: 64px;
   align-items: flex-start;
 }
-
+#content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 64px;
+  align-items: flex-start;
+}
 @media screen and (max-width: 1160px) {
   #content {
     display: flex;
@@ -31,16 +39,6 @@
   #Parent {
     overflow-x: hidden;
   }
-}
-
-#content {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 64px;
-  margin-bottom: 64px;
-  align-items: flex-start;
 }
 
 .Footer {

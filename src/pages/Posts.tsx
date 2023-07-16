@@ -14,8 +14,13 @@ import GrowBox from "../components/GrowBox";
 function Posts() {
   const [navMenuItems, setNavMenuItems] = React.useState<NavMenuItems[]>([]);
   const [posts, setPosts] = useState([]);
+  const [postsPerPage, setPostsPerPage] = useState(102); // How many posts to show per page
   const [currentPage, setCurrentPage] = useState(1);
-
+  useEffect(() => {
+    if (window.innerWidth < 400) {
+      setPostsPerPage(50);
+    }
+  }, []);
   useEffect(() => {
     const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage}&perPage=8&sortBy=created_at&sortDirection=desc&searchPhrase=test%20ber&categoryId=1`;
 
@@ -69,7 +74,7 @@ function Posts() {
         </div>
         <div id="paginationNavigator">
           <Pagination
-            totalPosts={102}
+            totalPosts={postsPerPage}
             postsPerPage={8}
             paginate={setCurrentPage}
             currentPage={currentPage}
